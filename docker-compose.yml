@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  backend:
+    build: ./user-management-backend
+    volumes:
+      - ./user-management-backend/users.json:/usr/src/app/users.json
+    ports:
+      - "3000:3000"
+
+  frontend:
+    build: ./user-management-frontend
+    ports:
+      - "9000:9000"
